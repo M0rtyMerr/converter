@@ -1,0 +1,10 @@
+language: swift
+xcode_project: CurrencyConverter.xcodeproj
+xcode_scheme: CurrencyConverter
+osx_image: xcode9.2
+
+before_install:
+- pod update
+
+script:
+- xcodebuild clean test -project CurrencyConverter.xcodeproj -scheme CurrencyConverter -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet

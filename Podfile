@@ -5,14 +5,13 @@ target 'CurrencyConverter' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
-  pod 'RxAlamofire'
   pod 'Then'
   pod 'SwiftLint'
+  pod 'RxAlamofire'
 
   target 'CurrencyConverterTests' do
     inherit! :search_paths
-    pod 'RxBlocking', '~> 4.0'
-    pod 'RxTest',     '~> 4.0'
+    pod 'RxBlocking'
   end
 
   target 'CurrencyConverterUITests' do
