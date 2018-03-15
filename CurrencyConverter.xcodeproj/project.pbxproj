@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		354807D1DCB41B2FF13399A4 /* Pods_CurrencyConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139DE8085E4575C32521B6AB /* Pods_CurrencyConverter.framework */; };
 		3CB01EC91CB0C39D650ADE51 /* Pods_CurrencyConverterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BD2A3231EBE3BA2B4AF940 /* Pods_CurrencyConverterTests.framework */; };
+		7810E1A9205AEB8700FE9823 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810E1A8205AEB8700FE9823 /* SettingsKeys.swift */; };
+		7810E1AE205AECE000FE9823 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7810E1AD205AECE000FE9823 /* Settings.plist */; };
+		7810E1B0205AEE2900FE9823 /* FixerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810E1AF205AEE2900FE9823 /* FixerEndpoint.swift */; };
+		7810E1B4205AF22300FE9823 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810E1B3205AF22300FE9823 /* SettingsService.swift */; };
+		7810E1B6205AF82400FE9823 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810E1B5205AF82400FE9823 /* NetworkService.swift */; };
+		7810E1B8205AF9B700FE9823 /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810E1B7205AF9B700FE9823 /* NetworkServiceImpl.swift */; };
 		7A66B977205A726200353C0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B976205A726200353C0A /* AppDelegate.swift */; };
 		7A66B979205A726200353C0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B978205A726200353C0A /* ViewController.swift */; };
 		7A66B97C205A726200353C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B97A205A726200353C0A /* Main.storyboard */; };
@@ -41,6 +47,12 @@
 		2F04DDDA1842AD2E48841CC1 /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 		3D3B3A36853BECC789CF3BF9 /* Pods-CurrencyConverterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests.release.xcconfig"; sourceTree = "<group>"; };
 		685B68B24BB4D4DCDFE3579A /* Pods-CurrencyConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.debug.xcconfig"; sourceTree = "<group>"; };
+		7810E1A8205AEB8700FE9823 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		7810E1AD205AECE000FE9823 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		7810E1AF205AEE2900FE9823 /* FixerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerEndpoint.swift; sourceTree = "<group>"; };
+		7810E1B3205AF22300FE9823 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		7810E1B5205AF82400FE9823 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7810E1B7205AF9B700FE9823 /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
 		7A66B973205A726200353C0A /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A66B976205A726200353C0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A66B978205A726200353C0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +111,69 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7810E1BA205AFC2300FE9823 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7810E1BB205AFC3400FE9823 /* Impl */,
+				7810E1B5205AF82400FE9823 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7810E1BB205AFC3400FE9823 /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				7810E1B3205AF22300FE9823 /* SettingsService.swift */,
+				7810E1B7205AF9B700FE9823 /* NetworkServiceImpl.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		7810E1BE205AFCDC00FE9823 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7810E1C0205AFCEF00FE9823 /* Storyboards */,
+				7810E1BF205AFCE800FE9823 /* Asset */,
+				7A66B982205A726200353C0A /* Info.plist */,
+				7810E1AD205AECE000FE9823 /* Settings.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7810E1BF205AFCE800FE9823 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B97D205A726200353C0A /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		7810E1C0205AFCEF00FE9823 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B97A205A726200353C0A /* Main.storyboard */,
+				7A66B97F205A726200353C0A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7810E1C3205AFD7100FE9823 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				7810E1C4205AFD8200FE9823 /* Constant */,
+				7810E1AF205AEE2900FE9823 /* FixerEndpoint.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		7810E1C4205AFD8200FE9823 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7810E1A8205AEB8700FE9823 /* SettingsKeys.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		7A66B96A205A726200353C0A = {
 			isa = PBXGroup;
 			children = (
@@ -126,10 +201,9 @@
 			children = (
 				7A66B976205A726200353C0A /* AppDelegate.swift */,
 				7A66B978205A726200353C0A /* ViewController.swift */,
-				7A66B97A205A726200353C0A /* Main.storyboard */,
-				7A66B97D205A726200353C0A /* Assets.xcassets */,
-				7A66B97F205A726200353C0A /* LaunchScreen.storyboard */,
-				7A66B982205A726200353C0A /* Info.plist */,
+				7810E1BE205AFCDC00FE9823 /* Resources */,
+				7810E1C3205AFD7100FE9823 /* Enum */,
+				7810E1BA205AFC2300FE9823 /* Service */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -283,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A66B981205A726200353C0A /* LaunchScreen.storyboard in Resources */,
+				7810E1AE205AECE000FE9823 /* Settings.plist in Resources */,
 				7A66B97E205A726200353C0A /* Assets.xcassets in Resources */,
 				7A66B97C205A726200353C0A /* Main.storyboard in Resources */,
 			);
@@ -486,7 +561,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7810E1B0205AEE2900FE9823 /* FixerEndpoint.swift in Sources */,
+				7810E1B4205AF22300FE9823 /* SettingsService.swift in Sources */,
+				7810E1B8205AF9B700FE9823 /* NetworkServiceImpl.swift in Sources */,
+				7810E1A9205AEB8700FE9823 /* SettingsKeys.swift in Sources */,
 				7A66B979205A726200353C0A /* ViewController.swift in Sources */,
+				7810E1B6205AF82400FE9823 /* NetworkService.swift in Sources */,
 				7A66B977205A726200353C0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +736,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				INFOPLIST_FILE = CurrencyConverter/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Electrolux.CurrencyConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,7 +752,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				INFOPLIST_FILE = CurrencyConverter/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Electrolux.CurrencyConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
