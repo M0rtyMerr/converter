@@ -172,8 +172,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A66B99B205A726200353C0A /* Build configuration list for PBXNativeTarget "CurrencyConverter" */;
 			buildPhases = (
-				7AD4B1A3205A7A2C00C3384E /* Swiftlint */,
 				3B870D49106F505074BC30C6 /* [CP] Check Pods Manifest.lock */,
+				7AD4B1A3205A7A2C00C3384E /* Swiftlint */,
 				7A66B96F205A726200353C0A /* Sources */,
 				7A66B970205A726200353C0A /* Frameworks */,
 				7A66B971205A726200353C0A /* Resources */,
@@ -347,13 +347,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,7 +375,7 @@
 		};
 		7AD4B1A3205A7A2C00C3384E /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -385,7 +383,7 @@
 			name = Swiftlint;
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};

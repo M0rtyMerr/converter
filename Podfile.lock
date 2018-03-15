@@ -1,40 +1,36 @@
 PODS:
-  - Alamofire (4.6.0)
-  - RxAlamofire (4.0.0):
-    - RxAlamofire/Core (= 4.0.0)
-  - RxAlamofire/Core (4.0.0):
+  - Alamofire (4.7.0)
+  - RxAlamofire (4.1.0):
+    - RxAlamofire/Core (= 4.1.0)
+  - RxAlamofire/Core (4.1.0):
     - Alamofire (~> 4.5)
     - RxSwift (~> 4.0)
-  - RxBlocking (4.1.1):
+  - RxBlocking (4.1.2):
     - RxSwift (~> 4.0)
-  - RxCocoa (4.1.1):
+  - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.1)
-  - RxTest (4.1.1):
-    - RxSwift (~> 4.0)
-  - SwiftLint (0.24.2)
+  - RxSwift (4.1.2)
+  - SwiftLint (0.25.0)
   - Then (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - RxAlamofire
-  - RxBlocking (~> 4.0)
+  - RxBlocking
   - RxCocoa
   - RxSwift
-  - RxTest (~> 4.0)
   - SwiftLint
   - Then
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
-  RxBlocking: 22e7d7b86a1c0c42164a30d64f56f97128b4ffab
-  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
-  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
-  RxTest: f934010a5b07ecd627cb70b38eb4baf0414591d2
-  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
+  RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: d682bcaea38f8bdf535086575527718c782dfdfb
+PODFILE CHECKSUM: 749f02a336f12467323503b7cea80e281f4601e6
 
 COCOAPODS: 1.4.0
