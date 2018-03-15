@@ -1,0 +1,10 @@
+.idea/
+Carthage/
+Pods/
+xcuserdata/
+.DS_Store
+/Fastlane/README.md
+/Fastlane/report.xml
+/Fastlane/outputs/
+/Fastlane/test_output/
+GeneratedMocks.swift

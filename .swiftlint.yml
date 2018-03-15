@@ -1,0 +1,73 @@
+disabled_rules:
+- todo
+
+opt_in_rules:
+- closure_spacing
+- closure_end_indentation
+- conditional_returns_on_newline
+
+- empty_count
+- explicit_init
+- extension_access_modifier
+
+- fatal_error_message
+- first_where
+- force_unwrapping
+
+- implicit_return
+
+- let_var_whitespace
+
+- multiline_parameters
+
+- nimble_operator
+- number_separator
+
+- object_literal
+- overridden_super_call
+
+- private_outlet
+- prohibited_super_call
+
+- redundant_nil_coalescing
+
+- unneeded_parentheses_in_closure_argument
+
+- vertical_parameter_alignment_on_call
+
+excluded:
+- Carthage
+- Pods
+- Generated
+- BeaconsTests
+- Beacons/Extension/Rx/CLLocationManager+Rx.swift
+- Beacons/Extension/Rx/RxCLLocationManagerDelegateProxy.swift
+- Beacons/Service/Impl/Demo
+
+line_length: 128
+
+type_body_length:
+- 500 # warning
+- 700 # error
+
+file_length:
+- 500  #warning
+- 1200 #error
+
+function_parameter_count:
+  error: 5
+
+identifier_name:
+  excluded:
+  - id
+  - ok
+  - URL
+  - x
+  - y
+  - z
+  - to
+  - v1
+  - v2
+
+warning_threshold: 1
+
