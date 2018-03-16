@@ -8,6 +8,10 @@ target 'CurrencyConverter' do
   pod 'Then'
   pod 'SwiftLint'
   pod 'RxAlamofire'
+  pod 'Swinject'
+  pod 'SwinjectAutoregistration'
+  pod 'RxSwiftExt'
+  pod 'SwiftyBeaver'
 
   target 'CurrencyConverterTests' do
     inherit! :search_paths

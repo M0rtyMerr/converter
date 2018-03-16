@@ -10,7 +10,15 @@ PODS:
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - RxSwiftExt (3.2.0):
+    - RxSwiftExt/Core (= 3.2.0)
+  - RxSwiftExt/Core (3.2.0):
+    - RxSwift (~> 4.0)
   - SwiftLint (0.25.0)
+  - SwiftyBeaver (1.5.1)
+  - Swinject (2.2.0)
+  - SwinjectAutoregistration (2.1.1):
+    - Swinject (~> 2.1)
   - Then (2.3.0)
 
 DEPENDENCIES:
@@ -19,7 +27,11 @@ DEPENDENCIES:
   - RxBlocking
   - RxCocoa
   - RxSwift
+  - RxSwiftExt
   - SwiftLint
+  - SwiftyBeaver
+  - Swinject
+  - SwinjectAutoregistration
   - Then
 
 SPEC CHECKSUMS:
@@ -28,9 +40,13 @@ SPEC CHECKSUMS:
   RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwiftExt: 64b7140124629a6a084159735f3714f0fb1c61d6
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
+  Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
+  SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: 749f02a336f12467323503b7cea80e281f4601e6
+PODFILE CHECKSUM: bdbf1163c351189152ac682bea131a6c7f47fc5d
 
 COCOAPODS: 1.4.0

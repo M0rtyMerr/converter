@@ -16,7 +16,7 @@ class SettingsService {
   }
 
   static private func getSettings() -> [String: AnyObject] {
-    guard let path = Bundle.main.path(forResource: SettingsKeys.filename, ofType: SettingsKeys.ofType),
+    guard let path = Bundle.main.path(forResource: SettingsKey.filename, ofType: SettingsKey.ofType),
       let settings = NSDictionary(contentsOfFile: path) as? [String: AnyObject]
       else {
         fatalError("Couldn't load application settings")

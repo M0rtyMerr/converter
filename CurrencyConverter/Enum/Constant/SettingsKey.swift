@@ -1,5 +1,5 @@
 //
-//  SettingsKeys.swift
+//  SettingsKey.swift
 //  CurrencyConverter
 //
 //  Created by Антон Назаров on 15/03/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SettingsKeys {
+enum SettingsKey {
   static let filename = "Settings"
   static let ofType = "plist"
   static let apiKey = "API_KEY"

@@ -10,7 +10,10 @@ import RxAlamofire
 import RxSwift
 
 class NetworkServiceImpl: NetworkService {
-  func get(endpoint: String) -> Observable<Any> {
-    return json(.get, endpoint)
+  init() {
+  }
+  
+  func get(endpoint: String) -> Observable<Data> {
+    return data(.get, endpoint)
   }
 }

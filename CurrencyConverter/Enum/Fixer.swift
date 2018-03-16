@@ -1,5 +1,5 @@
 //
-//  FixerEndpoint.swift
+//  Fixer.swift
 //  CurrencyConverter
 //
 //  Created by Антон Назаров on 15/03/2018.
@@ -12,7 +12,7 @@ import RxAlamofire
 enum Fixer {
   private static let base = "http://data.fixer.io/api/"
   private static let apiKey: String = {
-    guard let key = SettingsService.getFromSettings(key: SettingsKeys.apiKey) as? String else {
+    guard let key = SettingsService.getFromSettings(key: SettingsKey.apiKey) as? String else {
       fatalError("No valid api key")
     }
     return "?access_key=" + key
@@ -21,7 +21,7 @@ enum Fixer {
   enum Endpoint {
     case symbols
     case latest
-    case convert(String, String, Int)
+    case convert(from: String, to: String, amount: Double)
 
     func build() -> String {
       return base + path()
