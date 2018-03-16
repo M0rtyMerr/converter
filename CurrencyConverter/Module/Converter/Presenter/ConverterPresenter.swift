@@ -10,9 +10,8 @@ import RxSwift
 
 protocol ConverterPresenter {
   var currencies: Observable<[String]> { get }
-  var toAmount: Observable<String> { get }
-  var fromAmount: Observable<String> { get }
+  var amount: Observable<String> { get }
   var error: Observable<String> { get }
-
-  func dispatch(action: ConverterAction)
+  
+  func subscribeState(fromCurrency: Observable<String>, toCurrency: Observable<String>, amount: Observable<String>)
 }

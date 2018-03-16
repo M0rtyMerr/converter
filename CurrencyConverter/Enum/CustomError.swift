@@ -6,7 +6,7 @@
 //  Copyright © 2018 Electrolux. All rights reserved.
 //
 
-enum CustomError: Error {
+enum CustomError: String {
   case serviceError
   case formatError
 }

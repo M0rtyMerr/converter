@@ -34,7 +34,7 @@ enum Fixer {
       case .latest:
         return "latest" + apiKey
       case .convert(let from, let to, let amount):
-        return "convert" + apiKey + "from=\(from)&to=\(to)&amount=\(amount)"
+        return "convert" + apiKey + "&from=\(from)&to=\(to)&amount=\(amount)"
       }
     }
   }

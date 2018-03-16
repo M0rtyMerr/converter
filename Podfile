@@ -13,12 +13,19 @@ target 'CurrencyConverter' do
   pod 'RxSwiftExt'
   pod 'SwiftyBeaver'
 
+  def testing_pods
+      pod 'Quick'
+      pod 'Nimble'
+  end
+
   target 'CurrencyConverterTests' do
     inherit! :search_paths
+    testing_pods
     pod 'RxBlocking'
   end
 
   target 'CurrencyConverterUITests' do
     inherit! :search_paths
+    testing_pods
   end
 end

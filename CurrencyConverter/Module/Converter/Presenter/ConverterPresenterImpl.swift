@@ -2,7 +2,7 @@
 //  ConverterPresenterImpl.swift
 //  CurrencyConverter
 //
-//  Created by Антон Назаров on 15/03/2018.
+//  Created by Антон Назаров on 15/03/2018.§
 //  Copyright © 2018 Electrolux. All rights reserved.
 //
 
@@ -11,77 +11,69 @@ import RxCocoa
 import RxSwiftExt
 
 class ConverterPresenterImpl: ConverterPresenter {
-  private let _error = ReplaySubject<Error>.create(bufferSize: 1)
   private let disposeBag = DisposeBag()
   private let networkService: NetworkService
-  private let _toAmount = BehaviorSubject<String>(value: "")
-  private let _fromAmount = BehaviorSubject<String>(value: "")
+  private let _amount = BehaviorSubject<String>(value: "")
+  private let _error = BehaviorSubject<String>(value: "")
   private let codeNameCurrencies = BehaviorRelay<[String: String]>(value: [:])
   
   var error: Observable<String> {
-    return _error.asObservable().map { $0.localizedDescription }
+    return _error.asObservable().skip(1).debug()
   }
   var currencies: Observable<[String]> {
     return codeNameCurrencies.asObservable().map { Array($0.values) }
   }
-  var toAmount: Observable<String> {
-    return _toAmount.asObservable()
+  var amount: Observable<String> {
+    return _amount.asObservable()
   }
-  var fromAmount: Observable<String> {
-    return _fromAmount.asObservable()
-  }
-  
   
   init(networkService: NetworkService) {
     self.networkService = networkService
     let allCurrenciesResult = networkService.get(endpoint: Fixer.Endpoint.symbols.build())
-      .map { data -> [String: String] in
-        do {
-          return try JSONDecoder().decode(SymbolsDto.self, from: data).symbols
-        } catch {
-          throw CustomError.serviceError
-        }
-      }
-      .share()
-      .materialize()
+      .flatMap { data in
+        return Observable.just(try JSONDecoder().decode(SymbolsDto.self, from: data).symbols).materialize()
+      }.share()
     
     allCurrenciesResult.elements()
       .bind(to: codeNameCurrencies)
       .disposed(by: disposeBag)
     
     allCurrenciesResult.errors()
-      .bind(to: _error)
+      .map { _ in CustomError.serviceError.rawValue }
+      .subscribe(onNext: { [unowned self] in
+        self._error.onNext($0)
+      })
       .disposed(by: disposeBag)
   }
   
-  func dispatch(action: ConverterAction) {
-    switch action {
-    case .changeState(let from, let to, let amount, let changedBy):
-      guard let amount = Double(amount) else {
-        _error.onNext(CustomError.formatError)
-        return
-      }
-      
-      let convertResult = networkService.get(endpoint: Fixer.Endpoint.convert(from: from, to: to, amount: amount).build())
-        .map { data -> String in
-          do {
-            return try JSONDecoder().decode(ConvertDto.self, from: data).result
-          } catch {
-            throw CustomError.serviceError
-          }
+  func subscribeState(fromCurrency: Observable<String>, toCurrency: Observable<String>, amount: Observable<String>) {
+    let convertResult = Observable.combineLatest(
+      fromCurrency.debug(), toCurrency.debug(), amount.filterMap { [unowned self] amount -> FilterMap<Double> in
+        guard let convertedAmount = Double(amount) else {
+          self._error.onNext(CustomError.formatError.rawValue)
+          return .ignore
         }
-        .share()
-        .materialize()
-      
-      convertResult.errors().bind(to: _error).disposed(by: disposeBag)
-      convertResult.elements().subscribe(onNext: {
-        switch changedBy{
-        case .from:
-          self._fromAmount.onNext($0)
-        case .to:
-          self._toAmount.onNext($0)
-        }
-      }).disposed(by: disposeBag)
-    }
+        return .map(convertedAmount)
+    }, codeNameCurrencies.asObservable().skip(1)) { from, to, amount, codeToName in
+      return Fixer.Endpoint.convert(from: codeToName.allKeys(forValue:from)[0],
+                                    to: codeToName.allKeys(forValue: to)[0],
+                                    amount: amount).build()
+      }.map {
+        self.networkService.get(endpoint: $0)
+      }.flatMap { data in
+      return Observable.just(String(arc4random_uniform(100))).materialize()
+      // Pay $10 to uncomment this line
+      // return Observable.just(try JSONDecoder().decode(ConvertDto.self, from: data).result).materialize()
+    }.share()
+    
+    convertResult.errors()
+      .map { _ in CustomError.serviceError.rawValue }
+      .subscribe(onNext: { [unowned self] in
+      self._error.onNext($0)
+    }).disposed(by: disposeBag)
+    
+    convertResult.elements().subscribe(onNext: { [unowned self] in
+      self._amount.onNext($0)
+    }).disposed(by: disposeBag)
   }
 }
