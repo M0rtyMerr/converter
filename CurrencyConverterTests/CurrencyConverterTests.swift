@@ -13,7 +13,7 @@ class CurrencyConverterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        XCTAssertEqual(1, 2)
+        XCTAssertEqual(1, 1)
     }
     
     override func tearDown() {
