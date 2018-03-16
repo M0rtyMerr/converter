@@ -32,8 +32,15 @@
 		7A66B979205A726200353C0A /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B978205A726200353C0A /* ConverterViewController.swift */; };
 		7A66B97E205A726200353C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B97D205A726200353C0A /* Assets.xcassets */; };
 		7A66B981205A726200353C0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B97F205A726200353C0A /* LaunchScreen.storyboard */; };
-		7A66B98C205A726200353C0A /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B98B205A726200353C0A /* CurrencyConverterTests.swift */; };
+		7A66B98C205A726200353C0A /* FixerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B98B205A726200353C0A /* FixerTest.swift */; };
 		7A66B997205A726200353C0A /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B996205A726200353C0A /* CurrencyConverterUITests.swift */; };
+		7A852B77205C355100131524 /* InstantiateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A852B76205C355100131524 /* InstantiateUtil.swift */; };
+		7A852B79205C38E200131524 /* symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A852B78205C38E200131524 /* symbols.json */; };
+		7A852B7C205C39B700131524 /* convert.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A852B7B205C39B700131524 /* convert.json */; };
+		7A852B7E205C3A0500131524 /* ModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A852B7D205C3A0500131524 /* ModelTest.swift */; };
+		7A852B80205C3A5A00131524 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A852B7F205C3A5A00131524 /* Util.swift */; };
+		7A852B82205C3ED500131524 /* PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A852B81205C3ED500131524 /* PresenterTest.swift */; };
+		7A852B87205C3F5A00131524 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A852B86205C3F5A00131524 /* NetworkServiceMock.swift */; };
 		7AB33142205BDB3C006C4313 /* Dictionary+allKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB33141205BDB3C006C4313 /* Dictionary+allKeys.swift */; };
 		B13CB240FDEA141A43DF98A1 /* Pods_CurrencyConverterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C495AA8E8CE220C2ACC3A17C /* Pods_CurrencyConverterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -86,11 +93,18 @@
 		7A66B980205A726200353C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A66B982205A726200353C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A66B987205A726200353C0A /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A66B98B205A726200353C0A /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
+		7A66B98B205A726200353C0A /* FixerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerTest.swift; sourceTree = "<group>"; };
 		7A66B98D205A726200353C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A66B992205A726200353C0A /* CurrencyConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A66B996205A726200353C0A /* CurrencyConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterUITests.swift; sourceTree = "<group>"; };
 		7A66B998205A726200353C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A852B76205C355100131524 /* InstantiateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiateUtil.swift; sourceTree = "<group>"; };
+		7A852B78205C38E200131524 /* symbols.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = symbols.json; sourceTree = "<group>"; };
+		7A852B7B205C39B700131524 /* convert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = convert.json; sourceTree = "<group>"; };
+		7A852B7D205C3A0500131524 /* ModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTest.swift; sourceTree = "<group>"; };
+		7A852B7F205C3A5A00131524 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		7A852B81205C3ED500131524 /* PresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTest.swift; sourceTree = "<group>"; };
+		7A852B86205C3F5A00131524 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		7AB33141205BDB3C006C4313 /* Dictionary+allKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+allKeys.swift"; sourceTree = "<group>"; };
 		844C256E39A3CDAD6B3222A9 /* Pods-CurrencyConverterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverterUITests/Pods-CurrencyConverterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C495AA8E8CE220C2ACC3A17C /* Pods_CurrencyConverterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConverterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,7 +308,6 @@
 		7A66B96A205A726200353C0A = {
 			isa = PBXGroup;
 			children = (
-				7A852B74205C313200131524 /* Extension */,
 				7A66B975205A726200353C0A /* CurrencyConverter */,
 				7A66B98A205A726200353C0A /* CurrencyConverterTests */,
 				7A66B995205A726200353C0A /* CurrencyConverterUITests */,
@@ -317,6 +330,7 @@
 		7A66B975205A726200353C0A /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				7A852B74205C313200131524 /* Extension */,
 				7810E1C9205B018C00FE9823 /* DependencyInjection */,
 				7810E1C5205AFF6500FE9823 /* Module */,
 				7810E1BE205AFCDC00FE9823 /* Resources */,
@@ -330,8 +344,11 @@
 		7A66B98A205A726200353C0A /* CurrencyConverterTests */ = {
 			isa = PBXGroup;
 			children = (
-				7A66B98B205A726200353C0A /* CurrencyConverterTests.swift */,
+				7A852B75205C353D00131524 /* TestingUtils */,
+				7A852B85205C3EF900131524 /* Enum */,
+				7A852B84205C3EEC00131524 /* Module */,
 				7A66B98D205A726200353C0A /* Info.plist */,
+				7A852B7A205C396E00131524 /* Resource */,
 			);
 			path = CurrencyConverterTests;
 			sourceTree = "<group>";
@@ -351,6 +368,50 @@
 				7AB33141205BDB3C006C4313 /* Dictionary+allKeys.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7A852B75205C353D00131524 /* TestingUtils */ = {
+			isa = PBXGroup;
+			children = (
+				7A852B76205C355100131524 /* InstantiateUtil.swift */,
+				7A852B7F205C3A5A00131524 /* Util.swift */,
+			);
+			path = TestingUtils;
+			sourceTree = "<group>";
+		};
+		7A852B7A205C396E00131524 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7A852B78205C38E200131524 /* symbols.json */,
+				7A852B7B205C39B700131524 /* convert.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7A852B83205C3EE500131524 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				7A852B7D205C3A0500131524 /* ModelTest.swift */,
+				7A852B81205C3ED500131524 /* PresenterTest.swift */,
+				7A852B86205C3F5A00131524 /* NetworkServiceMock.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		7A852B84205C3EEC00131524 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				7A852B83205C3EE500131524 /* Converter */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		7A852B85205C3EF900131524 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B98B205A726200353C0A /* FixerTest.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		BADE159BB8227734FD14F875 /* Pods */ = {
@@ -494,6 +555,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A852B79205C38E200131524 /* symbols.json in Resources */,
+				7A852B7C205C39B700131524 /* convert.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,16 +611,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -571,13 +640,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyConverterUITests/Pods-CurrencyConverterUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -732,7 +811,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A66B98C205A726200353C0A /* CurrencyConverterTests.swift in Sources */,
+				7A852B7E205C3A0500131524 /* ModelTest.swift in Sources */,
+				7A852B77205C355100131524 /* InstantiateUtil.swift in Sources */,
+				7A852B87205C3F5A00131524 /* NetworkServiceMock.swift in Sources */,
+				7A66B98C205A726200353C0A /* FixerTest.swift in Sources */,
+				7A852B82205C3ED500131524 /* PresenterTest.swift in Sources */,
+				7A852B80205C3A5A00131524 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

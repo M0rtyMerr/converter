@@ -16,6 +16,9 @@ target 'CurrencyConverter' do
   def testing_pods
       pod 'Quick'
       pod 'Nimble'
+      pod 'Fakery'
+      pod 'OHHTTPStubs/Swift'
+      pod 'RxNimble'
   end
 
   target 'CurrencyConverterTests' do

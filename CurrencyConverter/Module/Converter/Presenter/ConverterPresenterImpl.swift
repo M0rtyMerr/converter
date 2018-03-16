@@ -14,11 +14,11 @@ class ConverterPresenterImpl: ConverterPresenter {
   private let disposeBag = DisposeBag()
   private let networkService: NetworkService
   private let _amount = BehaviorSubject<String>(value: "")
-  private let _error = BehaviorSubject<String>(value: "")
+  private let _error = BehaviorSubject<Error>(value: CustomError.formatError)
   private let codeNameCurrencies = BehaviorRelay<[String: String]>(value: [:])
   
   var error: Observable<String> {
-    return _error.asObservable().skip(1).debug()
+    return _error.map { $0.localizedDescription }.asObservable()
   }
   var currencies: Observable<[String]> {
     return codeNameCurrencies.asObservable().map { Array($0.values) }
@@ -26,12 +26,17 @@ class ConverterPresenterImpl: ConverterPresenter {
   var amount: Observable<String> {
     return _amount.asObservable()
   }
-  
+
   init(networkService: NetworkService) {
     self.networkService = networkService
     let allCurrenciesResult = networkService.get(endpoint: Fixer.Endpoint.symbols.build())
-      .flatMap { data in
-        return Observable.just(try JSONDecoder().decode(SymbolsDto.self, from: data).symbols).materialize()
+      .flatMap { data -> Observable<Event<[String: String]>> in
+        do {
+          let symbols = try JSONDecoder().decode(SymbolsDto.self, from: data).symbols
+          return Observable.just(symbols).materialize()
+        } catch {
+          return Observable.error(CustomError.serviceError).materialize()
+        }
       }.share()
     
     allCurrenciesResult.elements()
@@ -39,7 +44,6 @@ class ConverterPresenterImpl: ConverterPresenter {
       .disposed(by: disposeBag)
     
     allCurrenciesResult.errors()
-      .map { _ in CustomError.serviceError.rawValue }
       .subscribe(onNext: { [unowned self] in
         self._error.onNext($0)
       })
@@ -48,9 +52,9 @@ class ConverterPresenterImpl: ConverterPresenter {
   
   func subscribeState(fromCurrency: Observable<String>, toCurrency: Observable<String>, amount: Observable<String>) {
     let convertResult = Observable.combineLatest(
-      fromCurrency.debug(), toCurrency.debug(), amount.filterMap { [unowned self] amount -> FilterMap<Double> in
+      fromCurrency, toCurrency, amount.filterMap { [unowned self] amount -> FilterMap<Double> in
         guard let convertedAmount = Double(amount) else {
-          self._error.onNext(CustomError.formatError.rawValue)
+          self._error.onNext(CustomError.formatError)
           return .ignore
         }
         return .map(convertedAmount)
@@ -58,17 +62,16 @@ class ConverterPresenterImpl: ConverterPresenter {
       return Fixer.Endpoint.convert(from: codeToName.allKeys(forValue:from)[0],
                                     to: codeToName.allKeys(forValue: to)[0],
                                     amount: amount).build()
-      }.map {
+      }.debug().flatMap {
         self.networkService.get(endpoint: $0)
-      }.flatMap { data in
+      }.debug().flatMap { data in
       return Observable.just(String(arc4random_uniform(100))).materialize()
-      // Pay $10 to uncomment this line
-      // return Observable.just(try JSONDecoder().decode(ConvertDto.self, from: data).result).materialize()
+//       Pay $10 to uncomment this line
+//       return Observable.just(String(try JSONDecoder().decode(ConvertDto.self, from: data).result)).materialize()
     }.share()
     
     convertResult.errors()
-      .map { _ in CustomError.serviceError.rawValue }
-      .subscribe(onNext: { [unowned self] in
+    .subscribe(onNext: { [unowned self] in
       self._error.onNext($0)
     }).disposed(by: disposeBag)
     

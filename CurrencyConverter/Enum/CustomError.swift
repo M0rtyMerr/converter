@@ -6,7 +6,20 @@
 //  Copyright © 2018 Electrolux. All rights reserved.
 //
 
-enum CustomError: String {
+import Foundation
+
+enum CustomError: Error {
   case serviceError
   case formatError
+}
+
+extension CustomError: LocalizedError {
+  public var errorDescription: String? {
+    switch self {
+    case .serviceError:
+      return NSLocalizedString("Service error", comment: "Custom error")
+    case .formatError:
+      return NSLocalizedString("Format error", comment: "Custom error")
+    }
+  }
 }

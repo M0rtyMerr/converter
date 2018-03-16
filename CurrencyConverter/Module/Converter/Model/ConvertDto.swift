@@ -8,7 +8,7 @@
 
 struct ConvertDto: Codable {
   let success: Bool
-  let result: String
+  let result: Double
 
   private enum CodingKeys: String, CodingKey {
     case success
