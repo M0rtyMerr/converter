@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 
-class ConverterPresenterImpl: ConverterPresenter {
+final class ConverterPresenterImpl: ConverterPresenter {
   private let disposeBag = DisposeBag()
   private let networkService: NetworkService
   private let _amount = ReplaySubject<String>.create(bufferSize: 1)
