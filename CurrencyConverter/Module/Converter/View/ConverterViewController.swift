@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import RxSwiftExt
 
-class ConverterViewController: UIViewController {
+final class ConverterViewController: UIViewController {
   @IBOutlet private var currencyPicker: UIPickerView!
   @IBOutlet private var fromCurrencyName: UITextField!
   @IBOutlet private var toCurrencyName: UITextField!

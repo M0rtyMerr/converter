@@ -6,9 +6,6 @@
 //  Copyright © 2018 Electrolux. All rights reserved.
 //
 
-import Foundation
-import RxAlamofire
-
 enum Fixer {
   private static let base = "http://data.fixer.io/api/"
   private static let apiKey: String = {

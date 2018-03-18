@@ -387,6 +387,7 @@
 		7A852B75205C353D00131524 /* TestingUtils */ = {
 			isa = PBXGroup;
 			children = (
+				7A852B86205C3F5A00131524 /* NetworkServiceMock.swift */,
 				7A852B76205C355100131524 /* InstantiateUtil.swift */,
 				7A852B7F205C3A5A00131524 /* Util.swift */,
 			);
@@ -407,7 +408,6 @@
 			children = (
 				7A852B7D205C3A0500131524 /* ModelTest.swift */,
 				7A852B81205C3ED500131524 /* PresenterTest.swift */,
-				7A852B86205C3F5A00131524 /* NetworkServiceMock.swift */,
 			);
 			path = Converter;
 			sourceTree = "<group>";
@@ -627,7 +627,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
@@ -637,7 +636,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",

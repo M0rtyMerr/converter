@@ -9,7 +9,7 @@
 import RxAlamofire
 import RxSwift
 
-class NetworkServiceImpl: NetworkService {
+final class NetworkServiceImpl: NetworkService {
   init() {
   }
 

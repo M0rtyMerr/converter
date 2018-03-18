@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsService {
+final class SettingsService {
   private static var settings = getSettings()
 
   static func getFromSettings(key: String) -> AnyObject? {

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Electrolux. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 protocol NetworkService {
