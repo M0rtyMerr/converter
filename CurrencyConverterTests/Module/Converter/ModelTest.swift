@@ -14,18 +14,17 @@ class ModelTest: QuickSpec {
   override func spec() {
     describe("Model test") {
       it("maps symbols dto") {
-        let symbols = try! JSONDecoder().decode(SymbolsDto.self, from: Util.getJSON(name: Util.Res.symbols.rawValue))
-        expect(symbols.success) == true
-        expect(symbols.symbols.count) == 2
-        expect(symbols.symbols["AED"]) == "United Arab Emirates Dirham"
+        let symbols = try? JSONDecoder().decode(SymbolsDto.self, from: Util.getJSON(name: Util.Res.symbols.rawValue))
+        expect(symbols?.success) == true
+        expect(symbols?.symbols.count) == 2
+        expect(symbols?.symbols["AED"]) == "United Arab Emirates Dirham"
       }
-      
+
       it("maps convert dto") {
-        let convert = try! JSONDecoder().decode(ConvertDto.self, from: Util.getJSON(name: Util.Res.convert.rawValue))
-        expect(convert.success) == true
-        expect(convert.result) == 3724.305775
+        let convert = try? JSONDecoder().decode(ConvertDto.self, from: Util.getJSON(name: Util.Res.convert.rawValue))
+        expect(convert?.success) == true
+        expect(convert?.result) == 3_724.305_775
       }
     }
   }
 }
-

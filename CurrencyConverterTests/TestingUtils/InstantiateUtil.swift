@@ -10,18 +10,19 @@ import Fakery
 
 enum InstantiateUtil {
   private static let faker = Faker(locale: "nb-NO")
-  
+
   static func someString() -> String {
     return faker.internet.ipV6Address()
   }
-  
+
   static func someDouble() -> Double {
     return faker.number.randomDouble()
   }
-  
+
   static func someCurrency() -> String {
-  return "United Arab Emirates Dirham";
+  return "United Arab Emirates Dirham"
   }
 }
 
+//swiftlint:disable:next type_name
 typealias IU = InstantiateUtil

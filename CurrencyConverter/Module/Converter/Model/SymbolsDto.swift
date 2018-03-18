@@ -15,4 +15,3 @@ struct SymbolsDto: Codable {
     case symbols
   }
 }
-

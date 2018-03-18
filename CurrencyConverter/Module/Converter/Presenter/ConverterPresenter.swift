@@ -12,6 +12,6 @@ protocol ConverterPresenter {
   var currencies: Observable<[String]> { get }
   var amount: Observable<String> { get }
   var error: Observable<String> { get }
-  
+
   func subscribeState(fromCurrency: Observable<String>, toCurrency: Observable<String>, amount: Observable<String>)
 }
