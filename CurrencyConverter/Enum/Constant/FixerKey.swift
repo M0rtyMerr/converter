@@ -6,7 +6,7 @@
 //  Copyright © 2018 Electrolux. All rights reserved.
 //
 
-enum FixerKey: String  {
+enum FixerKey: String {
   case symbols
   case rates
   case success

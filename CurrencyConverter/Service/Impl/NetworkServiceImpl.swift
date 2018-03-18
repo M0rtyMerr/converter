@@ -12,7 +12,7 @@ import RxSwift
 class NetworkServiceImpl: NetworkService {
   init() {
   }
-  
+
   func get(endpoint: String) -> Observable<Data> {
     return data(.get, endpoint)
   }

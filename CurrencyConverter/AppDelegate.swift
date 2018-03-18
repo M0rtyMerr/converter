@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private let assembly = Assembler(MainAssembler.getAssemblies())
   var window: UIWindow?
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     configLogger()
     window = createWindow()
     return true
@@ -37,4 +38,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.addDestination(ConsoleDestination())
   }
 }
-

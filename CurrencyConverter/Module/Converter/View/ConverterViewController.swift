@@ -21,7 +21,7 @@ class ConverterViewController: UIViewController {
   private let disposeBag = DisposeBag()
   private var isPickingFrom = true
   var presenter: ConverterPresenter!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     addGestureRecognizers()
@@ -49,16 +49,18 @@ private extension ConverterViewController {
       toCurrency: toCurrencyName.rx.observe(String.self, #keyPath(UITextField.text)).unwrap().apply(inputPolicy),
       amount: fromCurrencyAmount.rx.text.orEmpty.asObservable().apply(inputPolicy)
     )
-    
+
     presenter.amount.bind(to: toCurrencyAmount.rx.text).disposed(by: disposeBag)
-    
-    presenter.error.map { UIAlertController(title: "Error", message: $0, preferredStyle: .alert).then {
-      $0.addAction(UIAlertAction(title: "Ok", style: .default))
-      }}.subscribe(onNext: {
-        self.present($0, animated: true)
-      }).disposed(by: disposeBag)
+
+    presenter.error.map {
+      UIAlertController(title: "Error", message: $0, preferredStyle: .alert).then {
+        $0.addAction(UIAlertAction(title: "Ok", style: .default))
+      }
+    }.subscribe(onNext: {
+      self.present($0, animated: true)
+    }).disposed(by: disposeBag)
   }
-  
+
   func inputPolicy(_ input: Observable<String>) -> Observable<String> {
     return input
       .debounce(0.3, scheduler: MainScheduler.instance)
@@ -70,27 +72,27 @@ private extension ConverterViewController {
 private extension ConverterViewController {
   func configurePicker() {
     currencyPicker.isHidden = true
-    
+
     fromCurrencyName.rx.controlEvent(.touchDown).subscribe(onNext: { _ in
       self.isPickingFrom = true
       self.currencyPicker.isHidden = false
     }).disposed(by: disposeBag)
-    
+
     toCurrencyName.rx.controlEvent(.touchDown).subscribe(onNext: {
       self.isPickingFrom = false
       self.currencyPicker.isHidden = false
     }).disposed(by: disposeBag)
-    
+
     presenter.currencies.bind(to: currencyPicker.rx.itemTitles) { _, item in
       return item
-      }.disposed(by: disposeBag)
-    
+    }.disposed(by: disposeBag)
+
     currencyPicker.rx.modelSelected(String.self)
       .map { $0[0] }
       .subscribe(onNext: { [unowned self] in
         (self.isPickingFrom ?  self.fromCurrencyName : self.toCurrencyName).text = $0
       }).disposed(by: disposeBag)
-    
+
     viewPickerTapRecognizer.rx.event.subscribe(onNext: { [unowned self] _ in
       self.currencyPicker.isHidden = true
     }).disposed(by: disposeBag)
