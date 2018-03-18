@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "7A66B986205A726200353C0A"
                BuildableName = "CurrencyConverterTests.xctest"
                BlueprintName = "CurrencyConverterTests"
+               ReferencedContainer = "container:CurrencyConverter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7A66B991205A726200353C0A"
+               BuildableName = "CurrencyConverterUITests.xctest"
+               BlueprintName = "CurrencyConverterUITests"
                ReferencedContainer = "container:CurrencyConverter.xcodeproj">
             </BuildableReference>
          </TestableReference>

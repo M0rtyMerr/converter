@@ -1,5 +1,21 @@
 PODS:
   - Alamofire (4.7.0)
+  - Fakery (3.3.0)
+  - Nimble (7.0.3)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
+  - Quick (1.2.0)
   - RxAlamofire (4.1.0):
     - RxAlamofire/Core (= 4.1.0)
   - RxAlamofire/Core (4.1.0):
@@ -9,28 +25,58 @@ PODS:
     - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
+  - RxNimble (4.1.0):
+    - Nimble (~> 7.0)
+    - RxBlocking (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - RxSwiftExt (3.2.0):
+    - RxSwiftExt/Core (= 3.2.0)
+  - RxSwiftExt/Core (3.2.0):
+    - RxSwift (~> 4.0)
   - SwiftLint (0.25.0)
+  - SwiftyBeaver (1.5.1)
+  - Swinject (2.2.0)
+  - SwinjectAutoregistration (2.1.1):
+    - Swinject (~> 2.1)
   - Then (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Fakery
+  - Nimble
+  - OHHTTPStubs/Swift
+  - Quick
   - RxAlamofire
   - RxBlocking
   - RxCocoa
+  - RxNimble
   - RxSwift
+  - RxSwiftExt
   - SwiftLint
+  - SwiftyBeaver
+  - Swinject
+  - SwinjectAutoregistration
   - Then
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Fakery: 3aae11a87721c807c18c6456500d088c1230d3e5
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
   RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxNimble: e5a34bf3b18d85406fc2a6e2cbc73aa2b4a858f0
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwiftExt: 64b7140124629a6a084159735f3714f0fb1c61d6
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
+  Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
+  SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: 749f02a336f12467323503b7cea80e281f4601e6
+PODFILE CHECKSUM: 707a373cbdda662bab28c07c0abdd95e24324ac1
 
 COCOAPODS: 1.4.0
