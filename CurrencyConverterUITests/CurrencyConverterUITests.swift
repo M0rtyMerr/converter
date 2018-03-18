@@ -43,7 +43,7 @@ class CurrencyConverterUITests: XCTestCase {
   func testAmountChangeAfterFromCurrencyChange() {
     let amount = getAmount()
     app.textFields[ElementKey.fromCurrency.rawValue].tap()
-    app.pickers[ElementKey.picker.rawValue].swipeDown()
+    app.pickers[ElementKey.picker.rawValue].swipeUp()
     sleep(1)
     XCTAssertNotEqual(amount, getAmount())
   }
@@ -51,7 +51,7 @@ class CurrencyConverterUITests: XCTestCase {
   func testAmountChangeAfterToCurrencyChange() {
     let amount = getAmount()
     app.textFields[ElementKey.toCurrency.rawValue].tap()
-    app.pickers[ElementKey.picker.rawValue].swipeDown()
+    app.pickers[ElementKey.picker.rawValue].swipeUp()
     sleep(1)
     XCTAssertNotEqual(amount, getAmount())
   }

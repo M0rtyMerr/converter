@@ -1,5 +1,6 @@
 # Currency Converter
 [![Build Status](https://travis-ci.org/MortMerr/converter.svg?branch=develop)](https://travis-ci.org/MortMerr/converter)
+
 App that converts between two currencies.
 
 ## Installation
